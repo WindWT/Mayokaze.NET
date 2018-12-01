@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Sprache;
 
 namespace SukimoeSharp
 {
@@ -19,6 +20,8 @@ namespace SukimoeSharp
             var input = File.ReadAllText(args[0]);
             //Ghostree.DebugRun(input);
             new Scheme().Run(input);
+
+            Console.ReadLine();
         }
     }
 }

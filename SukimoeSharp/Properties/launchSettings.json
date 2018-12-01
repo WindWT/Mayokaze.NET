@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SukimoeSharp": {
+      "commandName": "Project",
+      "commandLineArgs": "\"..\\..\\..\\test\\hello.scm\""
+    }
+  }
+}
