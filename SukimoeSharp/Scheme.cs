@@ -9,7 +9,7 @@ namespace SukimoeSharp
 {
     class Scheme
     {
-        private Dictionary<dynamic, dynamic> Env = new Dictionary<dynamic, dynamic>();
+        private Dictionary<string, dynamic> Env = new Dictionary<string, dynamic>();
 
         enum NodeType
         {
@@ -28,7 +28,7 @@ namespace SukimoeSharp
                 value = v;
                 array = a ?? new List<Node>();
             }
-            public dynamic eval(Dictionary<dynamic, dynamic> env) {
+            public dynamic eval(Dictionary<string, dynamic> env) {
                 switch (type) {
                     case NodeType.ValNode: {
                             return Convert.ToInt32(value);
@@ -50,7 +50,7 @@ namespace SukimoeSharp
                                     }
                                 case "lambda": //delta
                                 {
-                                        return new Closure() { f = array[1], p = array[0].eval(env), ctx = new Dictionary<dynamic, dynamic>()};   //not env?
+                                        return new Closure() { f = array[1], p = array[0].eval(env), ctx = env };
                                     }
                                 case "print": {
                                         Console.WriteLine(array[0].eval(env));
@@ -78,11 +78,20 @@ namespace SukimoeSharp
                                             if (env[value] is Closure) {
                                                 Closure val = env[value];
                                                 //env = env.Concat(val.ctx);
-                                                foreach (var kv in val.ctx) {
-                                                    env.Add(kv.Key, kv.Value);
+                                                var capture = new Dictionary<string, dynamic>();
+                                                foreach (var kv in env) {
+                                                    capture.Add(kv.Key, kv.Value);
                                                 }
-                                                env[val.p] = array[0];
-                                                return val.f.eval(env);
+                                                foreach (var kv in val.ctx) {
+                                                    if (capture.ContainsKey(kv.Key)) {
+                                                        capture[kv.Key] = kv.Value;
+                                                    }
+                                                    else {
+                                                        capture.Add(kv.Key, kv.Value);
+                                                    }
+                                                }
+                                                capture[val.p] = array[0];
+                                                return val.f.eval(capture);
                                             }
                                             return env[value].eval(env);
                                         }
@@ -102,7 +111,7 @@ namespace SukimoeSharp
         {
             public Node f;
             public dynamic p;
-            public Dictionary<dynamic, dynamic> ctx;
+            public Dictionary<string, dynamic> ctx;
         }
 
         private Parser<Node> program;
