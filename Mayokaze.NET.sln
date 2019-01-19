@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SukimoeSharp", "SukimoeSharp\SukimoeSharp.csproj", "{087844F8-04EA-400C-ABB7-B5F9A92F1504}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SukimoeSharp", "SukimoeSharp\SukimoeSharp.csproj", "{087844F8-04EA-400C-ABB7-B5F9A92F1504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostreeSharp", "GhostreeSharp\GhostreeSharp.csproj", "{B5E679BA-AC54-4B6F-9407-7769274EE7E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GhostreeSharp", "GhostreeSharp\GhostreeSharp.csproj", "{B5E679BA-AC54-4B6F-9407-7769274EE7E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyaSharp", "NyaSharp\NyaSharp.csproj", "{3283D0A6-784F-41C6-AA33-029A8F9215D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B5E679BA-AC54-4B6F-9407-7769274EE7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5E679BA-AC54-4B6F-9407-7769274EE7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5E679BA-AC54-4B6F-9407-7769274EE7E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3283D0A6-784F-41C6-AA33-029A8F9215D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3283D0A6-784F-41C6-AA33-029A8F9215D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3283D0A6-784F-41C6-AA33-029A8F9215D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3283D0A6-784F-41C6-AA33-029A8F9215D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

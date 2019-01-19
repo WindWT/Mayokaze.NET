@@ -1,0 +1,8 @@
+a = 10;
+print(a);
+a = clone;
+a["@name"] = "John";
+a["@age"] = 21;
+print (a["@name"]);
+a["print_name"] = \{print(@name);};
+a.print_name;
