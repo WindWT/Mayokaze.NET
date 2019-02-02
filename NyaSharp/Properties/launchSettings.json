@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NyaSharp": {
+      "commandName": "Project",
+      "commandLineArgs": "F:\\work\\Mayokaze.NET\\NyaSharp\\test\\test7.nya"
+    }
+  }
+}

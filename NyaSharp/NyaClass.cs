@@ -8,7 +8,7 @@ namespace NyaSharp
     class NyaClass : NyaObject
     {
         public Dictionary<string, dynamic> runtime_methods { get; }
-        public Dictionary<dynamic, dynamic> class_attrs { get; }
+        public Dictionary<dynamic, NyaProc> class_attrs { get; }
         public NyaObject base_class { get; set; }
 
         public NyaClass(NyaClass @base) {

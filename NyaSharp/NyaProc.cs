@@ -7,14 +7,14 @@ namespace NyaSharp
     {
         private List<dynamic> @params;
         private dynamic body;
-        private Dictionary<dynamic, dynamic> closure;
+        private Dictionary<string, dynamic> closure;
         public NyaProc(dynamic @p, dynamic @b, dynamic @c) {
             @params = p;
             body = b;
             closure = c;
         }
 
-        public dynamic call(NyaObject env, Dictionary<dynamic, dynamic> arguments) {
+        public dynamic Call(NyaObject env, List<NyaObject> arguments) {
             //It's a method call
             var e = new Env(env);
 
@@ -30,7 +30,7 @@ namespace NyaSharp
             return body.eval(e);
         }
 
-        public dynamic call(Env env, Dictionary<dynamic, dynamic> arguments) {
+        public dynamic Call(Env env, List<NyaObject> arguments) {
             //It's a lambda call
             env.locals = env.locals.Concat(closure)
                 .GroupBy(x => x.Key)

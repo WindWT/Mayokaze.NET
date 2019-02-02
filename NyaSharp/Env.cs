@@ -8,15 +8,15 @@ namespace NyaSharp
     {
         public NyaObject current_self { get; }
         public NyaClass current_class { get; }
-        public Dictionary<dynamic, dynamic> locals { get; set; }
+        public Dictionary<string, dynamic> locals { get; set; }
 
-        private Dictionary<string, dynamic> constants = new Dictionary<string, dynamic>();
+        private Dictionary<string, NyaObject> constants = new Dictionary<string, NyaObject>();
 
         public Env(NyaObject currentSelf) : this(currentSelf, currentSelf.runtime_class) {
 
         }
         public Env(NyaObject currentSelf, NyaClass currentClass) {
-            locals = new Dictionary<dynamic, dynamic>();
+            locals = new Dictionary<string, dynamic>();
             current_self = currentSelf;
             current_class = currentClass;
         }
