@@ -5,10 +5,10 @@ namespace NyaSharp
 {
     class NyaProc
     {
-        private List<dynamic> @params;
+        private List<string> @params;
         private dynamic body;
         private Dictionary<string, dynamic> closure;
-        public NyaProc(dynamic @p, dynamic @b, dynamic @c) {
+        public NyaProc(List<string> @p, dynamic @b, dynamic @c) {
             @params = p;
             body = b;
             closure = c;

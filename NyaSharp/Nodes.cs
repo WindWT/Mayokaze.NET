@@ -72,11 +72,11 @@ namespace NyaSharp
 
     class CallNode : INode
     {
-        public CallNode receiver;
+        public INode receiver;
         private dynamic method;
         private Nodes arguments;  //todo
 
-        public CallNode(CallNode r, dynamic m, Nodes a) {
+        public CallNode(INode r, dynamic m, Nodes a) {
             receiver = r;
             method = m;
             arguments = a;
@@ -184,7 +184,7 @@ namespace NyaSharp
         private dynamic @params;
         private dynamic body;
 
-        public DefNode(string n, dynamic p, dynamic b) {
+        public DefNode(string n, List<string> p, dynamic b) {
             name = n;
             @params = p;
             body = b;
